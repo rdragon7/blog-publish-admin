@@ -65,6 +65,8 @@
                 this.loginLoading = false
                 // 将token设置到sessionStorage中
                 window.sessionStorage.setItem('token',res.data.data.token)
+                // 跳转页面
+                this.$router.push('/home')
               } else {
                 this.$message({
                   message: '登录失败',
