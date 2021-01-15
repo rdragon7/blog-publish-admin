@@ -9,7 +9,7 @@
     router
     :collapse="isCollapse"
     :collapse-transition="false">
-    <el-menu-item index="1">
+    <el-menu-item index="/home">
       <i class="el-icon-s-home"></i>
       <span slot="title">首页</span>
     </el-menu-item>
@@ -18,8 +18,8 @@
         <i class="el-icon-edit"></i>
         <span>博客管理</span>
       </template>
-      <el-menu-item index="2-1-1">博文列表</el-menu-item>
-      <el-menu-item index="2-1-2">添加博文</el-menu-item>
+      <el-menu-item index="/articlelist">博文列表</el-menu-item>
+      <el-menu-item index="/addarticle">添加博文</el-menu-item>
     </el-submenu>
     <el-menu-item index="3">
       <i class="el-icon-document"></i>

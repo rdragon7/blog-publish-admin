@@ -8,3 +8,11 @@ export const login = loginForm => {
     data: loginForm
   })
 }
+
+// 查询用户
+export const getUser = () => {
+  return request({
+    url: `/blog/user/selectUser`,
+    method: 'get'
+  })
+}

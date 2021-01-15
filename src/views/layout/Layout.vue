@@ -7,7 +7,9 @@
       <el-header>
         <app-header />
       </el-header>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view />
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -17,7 +19,7 @@
   import AppHeader from './components/header'
 
   export default {
-    name: 'LayoutIndex',
+    name: 'Layout',
     components: {
       AppAside,
       AppHeader
@@ -44,6 +46,6 @@
     border-right: none;
   }
   .el-main {
-    background-color: #eaedf1;
+    background-color: #F1F3F5;
   }
 </style>

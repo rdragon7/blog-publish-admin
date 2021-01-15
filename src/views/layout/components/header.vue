@@ -6,8 +6,8 @@
     </div>
     <el-dropdown>
       <div class="header-avator">
-        <img src="~assets/img/avator2.jpg" alt="">
-        <span>dragon7</span>
+        <img :src="userlist.avatar" alt="">
+        <span>{{userlist.userName}}</span>
         <i class="el-icon-arrow-down el-icon--right"></i>
       </div>
       <el-dropdown-menu slot="dropdown">
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+  import { getUser } from '@/api/user'
+
   export default {
     name: 'AppHeader',
     props: {
@@ -28,10 +30,12 @@
     },
     data() {
       return {
-        
+        userlist: {}
       }
     },
-    created() {},
+    created() {
+      this.loadUserProfile()
+    },
     mounted() {},
     methods: {
       // 点击退出按钮，推出登录返回登录页面
@@ -42,6 +46,12 @@
       // 菜单折叠与显示
       toggleCallapse() {
         console.log("aaa");
+      },
+      // 获取当前登录用户信息
+      loadUserProfile() {
+        getUser().then(res => {
+          this.userlist = res.data.data.list[0]
+        })
       }
     }
   }
